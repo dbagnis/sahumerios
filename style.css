@@ -73,3 +73,11 @@ h3{font-size:1.2rem;margin-bottom:.3rem}
 footer{background:var(--tinta);color:var(--blanco);text-align:center;padding:2.75rem 1.5rem 3rem;margin-top:1rem}
 .frase{max-width:34rem;margin:0 auto 1.25rem;font-size:1.25rem;font-style:italic;line-height:1.5}
 .creditos{font:700 1rem var(--titulos);color:var(--citronela)}
+/* Que la página aproveche el ancho de cualquier pantalla */
+html{font-size:clamp(16px, .6vw + 10px, 22px)}
+@media(min-width:720px){
+  main{max-width:72rem}
+  .portada{padding:4rem 3rem 3.5rem}
+  .portada-texto,.portada .foto{max-width:60rem}
+  .dos-col{gap:2.5rem}
+}
