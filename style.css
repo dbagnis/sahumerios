@@ -1,0 +1,66 @@
+:root{
+  --papel:#E6E3DC; --tinta:#1E2B1D; --citronela:#B9CB3C; --lavanda:#7A68AE;
+  --carton:#8B7355; --blanco:#FAF9F6;
+  --titulos:'Bricolage Grotesque','Trebuchet MS',Verdana,sans-serif;
+  --texto:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--papel);color:var(--tinta);font:1.1rem/1.65 var(--texto);-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--titulos);line-height:1.1}
+img{max-width:100%;display:block}
+
+/* Portada: celdas de caja de huevos hechas con CSS */
+.portada{
+  padding:3rem 1.25rem 2.5rem;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255,255,255,.55) 0 22%, rgba(0,0,0,.10) 24% 28%, transparent 30%) 0 0/84px 84px,
+    var(--carton);
+  color:var(--blanco);
+}
+.portada-texto{max-width:34rem;margin:0 auto 1.75rem;background:var(--tinta);padding:1.5rem 1.4rem;border-left:8px solid var(--citronela)}
+h1{font-size:clamp(2rem,8vw,3.6rem);font-weight:800}
+.bajada{margin-top:.9rem;font-size:1.05rem;opacity:.92}
+.portada .foto{max-width:34rem;margin:0 auto}
+
+main{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+.bloque{padding:2.75rem 0;border-bottom:2px dotted var(--carton)}
+h2{font-size:clamp(1.6rem,6vw,2.2rem);margin-bottom:1.1rem;font-weight:800}
+h3{font-size:1.2rem;margin-bottom:.3rem}
+.dos-col{display:grid;gap:1.25rem}
+@media(min-width:720px){
+  .dos-col{grid-template-columns:1fr 1fr;align-items:center}
+  main{max-width:56rem}
+}
+
+/* Fotos: si falta la imagen, se muestra un recuadro con el nombre del archivo */
+.foto{background:var(--blanco);border:1px solid rgba(0,0,0,.12);border-radius:6px;overflow:hidden;aspect-ratio:4/3}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto.ancha{aspect-ratio:16/9}
+.foto.sin-foto img{display:none}
+.foto.sin-foto{display:grid;place-items:center;text-align:center;padding:1rem;color:var(--carton);font:.9rem var(--titulos);border:2px dashed var(--carton);background:rgba(255,255,255,.4)}
+.foto.sin-foto::after{content:"Falta la foto: " attr(data-nombre)}
+
+/* Aromas */
+.aromas{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin-top:.6rem}
+.aromas li{padding:.45rem 1rem;border-radius:999px;font:700 .95rem var(--titulos);color:var(--tinta);background:var(--blanco);border:2px solid var(--carton)}
+.aromas .citronela{background:var(--citronela);border-color:var(--citronela)}
+.aromas .lavanda{background:var(--lavanda);border-color:var(--lavanda);color:#fff}
+
+/* Pasos: secuencia real, por eso van numerados */
+.pasos{list-style:none;padding:0;counter-reset:paso;display:grid;gap:1.75rem}
+.pasos li{counter-increment:paso;display:grid;gap:.9rem;position:relative;padding-left:3.2rem}
+.pasos li::before{content:counter(paso);position:absolute;left:0;top:0;width:2.3rem;height:2.3rem;border-radius:50%;background:var(--tinta);color:var(--citronela);font:800 1.15rem/2.3rem var(--titulos);text-align:center}
+@media(min-width:720px){.pasos li{grid-template-columns:1fr 1fr;align-items:center;gap:1.5rem}}
+
+/* Producto final */
+.final .foto{margin-bottom:1.25rem}
+.datos{display:grid;gap:.75rem}
+.datos div{background:var(--blanco);padding:.8rem 1rem;border-left:6px solid var(--lavanda)}
+.datos dt{font:700 .9rem var(--titulos);color:var(--carton)}
+.datos dd{margin:0;font-size:1.1rem}
+@media(min-width:720px){.datos{grid-template-columns:repeat(3,1fr)}}
+
+/* Pie */
+footer{background:var(--tinta);color:var(--blanco);text-align:center;padding:2.75rem 1.5rem 3rem;margin-top:1rem}
+.frase{max-width:34rem;margin:0 auto 1.25rem;font-size:1.25rem;font-style:italic;line-height:1.5}
+.creditos{font:700 1rem var(--titulos);color:var(--citronela)}
