@@ -62,6 +62,12 @@ h3{font-size:1.2rem;margin-bottom:.3rem}
 /* Nombre de la escuela y curso en la portada */
 .escuela{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.1rem}
 .escuela span{background:var(--citronela);color:var(--tinta);font:800 1.3rem var(--titulos);padding:.4rem .9rem}
+/* Cinta de texto que corre de derecha a izquierda */
+.cinta{background:var(--tinta);color:var(--citronela);overflow:hidden;white-space:nowrap;padding:.7rem 0;font:700 1.1rem var(--titulos)}
+.cinta-pista{display:inline-block;animation:correr 30s linear infinite}
+.cinta-pista span{display:inline-block}
+@keyframes correr{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cinta-pista{animation:none}.cinta{overflow-x:auto}}
 
 /* Pie */
 footer{background:var(--tinta);color:var(--blanco);text-align:center;padding:2.75rem 1.5rem 3rem;margin-top:1rem}
