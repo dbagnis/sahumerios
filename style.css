@@ -59,6 +59,9 @@ h3{font-size:1.2rem;margin-bottom:.3rem}
 .datos dt{font:700 .9rem var(--titulos);color:var(--carton)}
 .datos dd{margin:0;font-size:1.1rem}
 @media(min-width:720px){.datos{grid-template-columns:repeat(3,1fr)}}
+/* Nombre de la escuela y curso en la portada */
+.escuela{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.1rem}
+.escuela span{background:var(--citronela);color:var(--tinta);font:800 1.3rem var(--titulos);padding:.4rem .9rem}
 
 /* Pie */
 footer{background:var(--tinta);color:var(--blanco);text-align:center;padding:2.75rem 1.5rem 3rem;margin-top:1rem}
