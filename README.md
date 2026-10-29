@@ -1,4 +1,5 @@
-# Web de Sahumerios (muestra de fin de año)
+# Micro emprendimiento "Alma de barro 452"
+# Web de Sahumerios y conitos ahuyenta mosquitos y aromatizantes (muestra de fin de año)
 
 Sitio estático: no necesita instalar nada. Abrí `index.html` en el navegador para verlo.
 
